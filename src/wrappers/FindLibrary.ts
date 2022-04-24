@@ -3,7 +3,7 @@
 /* eslint-disable */
 import {
   BaseContract,
-  BigNumber,
+  BigNumber
   BytesLike,
   CallOverrides,
   PopulatedTransaction,
