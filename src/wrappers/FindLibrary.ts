@@ -4,7 +4,7 @@
 import {
   BaseContract,
   BigNumber,
-  BytesLike,
+  BytesLike
   CallOverrides,
   PopulatedTransaction,
   Signer,
