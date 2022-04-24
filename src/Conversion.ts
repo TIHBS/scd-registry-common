@@ -1,5 +1,5 @@
 import { Metadata } from "./interfaces/Metadata";
-import { Registry } from "../../decentralised-scd-registry/src/types/Registry";
+import { Registry } from "./wrappers/Registry";
 import { fromBlockchainType, toBlockchainType } from "./interfaces/Types";
 
 export function toContractType(metadata: Metadata): Registry.SCDMetadataStruct {
