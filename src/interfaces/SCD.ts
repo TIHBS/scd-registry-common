@@ -1,6 +1,7 @@
 import { BlockchainType, Lifecycle } from "./Types";
 import { Event } from "./Event";
 import { Function } from "./Function";
+import { BigNumberish } from "ethers";
 
 export interface SCD {
   scdl_version: string;
@@ -21,4 +22,9 @@ export interface SCD {
   is_stateful: true;
   functions: Function[];
   events?: Event[];
+}
+
+export interface SCDWithID {
+  id: BigNumberish;
+  scd: SCD;
 }
