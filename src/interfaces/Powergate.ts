@@ -25,3 +25,10 @@ export interface StorageJobInfo {
   errorCause: string;
   createdAt: number;
 }
+
+export interface CidSummary {
+  cid: string;
+  stored: boolean;
+  queuedJobsList: Array<string>;
+  executingJob: string;
+}
