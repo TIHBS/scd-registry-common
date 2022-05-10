@@ -20,6 +20,15 @@ export interface JobStatusMap {
   JOB_STATUS_SUCCESS: 5;
 }
 
+export interface JobStatusToStringMap {
+  0: "Unspecified";
+  1: "Queued";
+  2: "Executing";
+  3: "Failed";
+  4: "Cancelled";
+  5: "Success";
+}
+
 export interface StorageJobInfo {
   status: JobStatusMap[keyof JobStatusMap];
   errorCause: string;
