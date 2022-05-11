@@ -33,5 +33,3 @@ export function fromContractType(
     blockchain_type: toBlockchainType.get(metadata.blockChainType as number)!,
   };
 }
-
-export { Metadata, Registry };
