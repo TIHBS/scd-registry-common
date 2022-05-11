@@ -24,7 +24,6 @@ export interface RegexInterface extends utils.Interface {
     "find(string)": FunctionFragment;
     "setUtilAddress(address)": FunctionFragment;
     "utilAddress()": FunctionFragment;
-    "testtttt()": FunctionFragment;
     "tokenize(string)": FunctionFragment;
   };
 
@@ -39,7 +38,6 @@ export interface RegexInterface extends utils.Interface {
     functionFragment: "utilAddress",
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "testtttt", values?: undefined): string;
   encodeFunctionData(functionFragment: "tokenize", values: [string]): string;
 
   decodeFunctionResult(functionFragment: "count", data: BytesLike): Result;
@@ -53,7 +51,6 @@ export interface RegexInterface extends utils.Interface {
     functionFragment: "utilAddress",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "testtttt", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "tokenize", data: BytesLike): Result;
 
   events: {};
@@ -112,8 +109,6 @@ export interface Regex extends BaseContract {
 
     utilAddress(overrides?: CallOverrides): Promise<[string]>;
 
-    testtttt(overrides?: CallOverrides): Promise<[BigNumber]>;
-
     tokenize(input: string, overrides?: CallOverrides): Promise<[string[]]>;
   };
 
@@ -139,8 +134,6 @@ export interface Regex extends BaseContract {
 
   utilAddress(overrides?: CallOverrides): Promise<string>;
 
-  testtttt(overrides?: CallOverrides): Promise<BigNumber>;
-
   tokenize(input: string, overrides?: CallOverrides): Promise<string[]>;
 
   callStatic: {
@@ -163,8 +156,6 @@ export interface Regex extends BaseContract {
 
     utilAddress(overrides?: CallOverrides): Promise<string>;
 
-    testtttt(overrides?: CallOverrides): Promise<BigNumber>;
-
     tokenize(input: string, overrides?: CallOverrides): Promise<string[]>;
   };
 
@@ -183,8 +174,6 @@ export interface Regex extends BaseContract {
     ): Promise<BigNumber>;
 
     utilAddress(overrides?: CallOverrides): Promise<BigNumber>;
-
-    testtttt(overrides?: CallOverrides): Promise<BigNumber>;
 
     tokenize(input: string, overrides?: CallOverrides): Promise<BigNumber>;
   };
@@ -211,8 +200,6 @@ export interface Regex extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     utilAddress(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    testtttt(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     tokenize(
       input: string,
