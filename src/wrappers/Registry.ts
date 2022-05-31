@@ -64,6 +64,40 @@ export declare namespace Registry {
     BigNumber,
     Registry.SCDMetadataStructOutput
   ] & { id: BigNumber; metadata: Registry.SCDMetadataStructOutput };
+
+  export type SCDMetadataInStruct = {
+    name: string;
+    internalAddress: string;
+    url: string;
+    signature: string;
+    version: string;
+    functions: string[];
+    events: string[];
+    isValid: boolean;
+    blockChainType: BigNumberish;
+  };
+
+  export type SCDMetadataInStructOutput = [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string[],
+    string[],
+    boolean,
+    number
+  ] & {
+    name: string;
+    internalAddress: string;
+    url: string;
+    signature: string;
+    version: string;
+    functions: string[];
+    events: string[];
+    isValid: boolean;
+    blockChainType: number;
+  };
 }
 
 export interface RegistryInterface extends utils.Interface {
@@ -72,7 +106,7 @@ export interface RegistryInterface extends utils.Interface {
     "indicesToMetadata(uint256[])": FunctionFragment;
     "query(string)": FunctionFragment;
     "regexAddress()": FunctionFragment;
-    "retrieveByAuthor(string)": FunctionFragment;
+    "retrieveByAuthor(address)": FunctionFragment;
     "retrieveByEvent(string)": FunctionFragment;
     "retrieveByFunction(string)": FunctionFragment;
     "retrieveById(uint256)": FunctionFragment;
@@ -83,8 +117,8 @@ export interface RegistryInterface extends utils.Interface {
     "retrieveByUrl(string)": FunctionFragment;
     "retrieveByVersion(string)": FunctionFragment;
     "setRegexAddress(address)": FunctionFragment;
-    "store((string,string,string,string,string,string,string[],string[],bool,uint8))": FunctionFragment;
-    "storeMultiple((string,string,string,string,string,string,string[],string[],bool,uint8)[])": FunctionFragment;
+    "store((string,string,string,string,string,string[],string[],bool,uint8))": FunctionFragment;
+    "storeMultiple((string,string,string,string,string,string[],string[],bool,uint8)[])": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -142,11 +176,11 @@ export interface RegistryInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "store",
-    values: [Registry.SCDMetadataStruct]
+    values: [Registry.SCDMetadataInStruct]
   ): string;
   encodeFunctionData(
     functionFragment: "storeMultiple",
-    values: [Registry.SCDMetadataStruct[]]
+    values: [Registry.SCDMetadataInStruct[]]
   ): string;
 
   decodeFunctionResult(
@@ -319,12 +353,12 @@ export interface Registry extends BaseContract {
     ): Promise<ContractTransaction>;
 
     store(
-      _metadata: Registry.SCDMetadataStruct,
+      _metadata: Registry.SCDMetadataInStruct,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
     storeMultiple(
-      _metadata: Registry.SCDMetadataStruct[],
+      _metadata: Registry.SCDMetadataInStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
@@ -397,12 +431,12 @@ export interface Registry extends BaseContract {
   ): Promise<ContractTransaction>;
 
   store(
-    _metadata: Registry.SCDMetadataStruct,
+    _metadata: Registry.SCDMetadataInStruct,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   storeMultiple(
-    _metadata: Registry.SCDMetadataStruct[],
+    _metadata: Registry.SCDMetadataInStruct[],
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -475,12 +509,12 @@ export interface Registry extends BaseContract {
     ): Promise<void>;
 
     store(
-      _metadata: Registry.SCDMetadataStruct,
+      _metadata: Registry.SCDMetadataInStruct,
       overrides?: CallOverrides
     ): Promise<void>;
 
     storeMultiple(
-      _metadata: Registry.SCDMetadataStruct[],
+      _metadata: Registry.SCDMetadataInStruct[],
       overrides?: CallOverrides
     ): Promise<void>;
   };
@@ -553,12 +587,12 @@ export interface Registry extends BaseContract {
     ): Promise<BigNumber>;
 
     store(
-      _metadata: Registry.SCDMetadataStruct,
+      _metadata: Registry.SCDMetadataInStruct,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
     storeMultiple(
-      _metadata: Registry.SCDMetadataStruct[],
+      _metadata: Registry.SCDMetadataInStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
@@ -632,12 +666,12 @@ export interface Registry extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     store(
-      _metadata: Registry.SCDMetadataStruct,
+      _metadata: Registry.SCDMetadataInStruct,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
     storeMultiple(
-      _metadata: Registry.SCDMetadataStruct[],
+      _metadata: Registry.SCDMetadataInStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
   };
