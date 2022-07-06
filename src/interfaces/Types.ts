@@ -12,8 +12,8 @@ const toScope = new Map<number, Scope>([
 ]);
 
 const toBlockchainType = new Map<number, BlockchainType>([
-  [0, "ethereum"],
-  [1, "bitcoin"],
+  [0, "bitcoin"],
+  [1, "ethereum"],
   [2, "fabric"],
   [3, "neo"],
 ]);
@@ -30,9 +30,9 @@ const fromScope = new Map<Scope, BigNumberish>([
   ["external", 3],
 ]);
 
-const fromBlockchainType = new Map<BlockchainType, BigNumberish>([
-  ["ethereum", 0],
-  ["bitcoin", 1],
+const fromBlockchainType = new Map<BlockchainType, BigNumberish>([ 
+  ["bitcoin", 0],
+  ["ethereum", 1],
   ["fabric", 2],
   ["neo", 3],
 ]);
