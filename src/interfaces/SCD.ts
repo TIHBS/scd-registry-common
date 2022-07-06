@@ -6,6 +6,7 @@ import { Metadata } from "./Metadata";
 
 export interface SCD {
   scdl_version: string;
+  author_pub_key: string;
   name: string;
   version: string;
   latest_URL?: URL;
