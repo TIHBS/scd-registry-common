@@ -73,7 +73,6 @@ export declare namespace Registry {
     version: string;
     functions: string[];
     events: string[];
-    isValid: boolean;
     blockChainType: BigNumberish;
   };
 
@@ -85,7 +84,6 @@ export declare namespace Registry {
     string,
     string[],
     string[],
-    boolean,
     number
   ] & {
     name: string;
@@ -95,7 +93,6 @@ export declare namespace Registry {
     version: string;
     functions: string[];
     events: string[];
-    isValid: boolean;
     blockChainType: number;
   };
 }
@@ -117,8 +114,8 @@ export interface RegistryInterface extends utils.Interface {
     "retrieveByUrl(string)": FunctionFragment;
     "retrieveByVersion(string)": FunctionFragment;
     "setRegexAddress(address)": FunctionFragment;
-    "store((string,string,string,string,string,string[],string[],bool,uint8))": FunctionFragment;
-    "storeMultiple((string,string,string,string,string,string[],string[],bool,uint8)[])": FunctionFragment;
+    "store((string,string,string,string,string,string[],string[],uint8))": FunctionFragment;
+    "storeMultiple((string,string,string,string,string,string[],string[],uint8)[])": FunctionFragment;
   };
 
   encodeFunctionData(
