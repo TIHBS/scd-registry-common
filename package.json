@@ -1,5 +1,5 @@
 {
-  "name": "decentralised-scd-registry-common",
+  "name": "scd-registry-common",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
