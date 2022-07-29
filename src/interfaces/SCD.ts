@@ -26,9 +26,10 @@ export interface SCD {
   events?: Event[];
 }
 
-export interface SCDWithID {
+export interface SCDWithIDAndMetadata {
   id: BigNumberish;
   scd: SCD;
+  metadata: Metadata;
 }
 
 export interface SCDWithMetadata {
